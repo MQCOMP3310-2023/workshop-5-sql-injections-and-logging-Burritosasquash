@@ -76,7 +76,7 @@ public class App {
             while (!guess.equals("q")) {
                 System.out.println("You've guessed '" + guess+"'.");
 
-                if (wordleDatabaseConnection.isValidWord(guess)) { 
+                if (wordleDatabaseConnection.isValidWord(guess) /*&& guess.matches("\\p{javaLowerCase}+") && guess.length() == 4*/) { 
                     System.out.println("Success! It is in the the list.\n");
                 }else{
                     System.out.println("Sorry. This word is NOT in the the list.\n");
@@ -88,6 +88,6 @@ public class App {
         } catch (NoSuchElementException | IllegalStateException e) {
             e.printStackTrace();
         }
-
+    
     }
 }
